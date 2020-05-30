@@ -32,7 +32,7 @@
         };
         var strJson = JSON.stringify(ecpoint);
         console.log(strJson);
-    
+
         var strInp = "                                                    ";
         //var vout = neoptFib.cpp_SmartContract_Contract_CreateSignatureRedeemScript(strJson); //Module.cpp_SmartContract_Contract_CreateSignatureRedeemScript(strJson);
         var vout = Neo3CppLib.Neo3_SmartContract_Contract_CreateSignatureRedeemScript(strJson); //Module.cpp_SmartContract_Contract_CreateSignatureRedeemScript(strJson);
@@ -44,6 +44,13 @@
   </script>
 
 <body>
+  <h2>neopt-sdk-js</h2>
 
+  This is a demo for <a href="https://github.com/neoresearch/neopt-sdk-js">neopt-sdk-js</a>,
+  a JavaScript SDK for Neo3 Blockchain. It is based on C++ projects neopt and neo-cpp-core.
+
+  This is under construction. See console for some messages.
+
+  Soon this will have interactive boxes for experimenting the SDK online ;)
 </body>
 </html>
