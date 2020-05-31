@@ -20,7 +20,7 @@
                 (Object.getOwnPropertyNames(Neo3CppLib).filter(function (p) {
                     return typeof Neo3CppLib[p] === 'function';
                 }));
-            document.getElementById('all_methods').value = 
+            document.getElementById('all_methods').value =
                 document.getElementById('all_methods').value.replace(/,/g, '\n')
         }
     );
@@ -56,7 +56,8 @@
     <h2>neopt-sdk-js</h2>
 
     <br />
-    <a href="https://github.com/NeoResearch/neo-cpp-core/tree/master/packages/lib-neopt-core-js" target="_blank"><b>Neo3CppLib:</b></a>
+    <a href="https://github.com/NeoResearch/neo-cpp-core/tree/master/packages/lib-neopt-core-js"
+        target="_blank"><b>Neo3CppLib:</b></a>
     <div id="lib_hash">loading...</div>
     <b>Core Date:</b>
     <div id="lib_date">loading...</div>
@@ -96,6 +97,7 @@
 
     <h3>API Methods</h3>
 
+    <i>Neo3CppLib.(api_method_name)</i><br/>
     <textarea id="all_methods" cols=70 rows=6 readonly></textarea>
 
     <h3>More...</h3>
