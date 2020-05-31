@@ -15,6 +15,13 @@
             // can use functions now!
             document.getElementById('lib_hash').innerHTML = Neo3CppLib.mymodule['core-hash'];
             document.getElementById('lib_date').innerHTML = Neo3CppLib.mymodule['core-date'];
+
+            document.getElementById('all_methods').value =
+                (Object.getOwnPropertyNames(Neo3CppLib).filter(function (p) {
+                    return typeof Neo3CppLib[p] === 'function';
+                }));
+            document.getElementById('all_methods').value = 
+                document.getElementById('all_methods').value.replace(/,/g, '\n')
         }
     );
 //
@@ -62,7 +69,7 @@
     <br /><br />
 
     <h3>Wallets</h3>
-<!-- 
+    <!-- 
     Neo3CppLib.Neo3_Wallets_wHelper_ToScriptHash
     Neo3CppLib.Neo3_Wallets_wHelper_ToAddress
     Neo3CppLib.Neo3_SmartContract_scHelper_ToScriptHash
@@ -84,6 +91,14 @@
     <br /><br />
 
     <h3>SmartContract</h3>
+
+    ...
+
+    <h3>API Methods</h3>
+
+    <textarea id="all_methods" cols=70 rows=6 readonly></textarea>
+
+    <h3>More...</h3>
 
     This is under construction. See console for some messages.
 
