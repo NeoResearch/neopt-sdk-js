@@ -11,10 +11,12 @@ vendor: update_submodules cpp_core_deps_js
 
 cpp_core_deps_js:
 	cd thirdparty/neo-cpp-core/ && make vendor_js
+	# clean remote 'dist/'
+	rm -f thirdparty/neo-cpp-core/packages/lib-neopt-core-js/dist/*
 	cd thirdparty/neo-cpp-core/packages/lib-neopt-core-js/ && make compile
 	cd thirdparty/neo-cpp-core/packages/lib-neopt-core-js/ && make test
 	# install Neo3CppLib on demo/ folder
-	rm -f demo/*.wasm
+	rm -f demo/dist/*.wasm
 	cp -r thirdparty/neo-cpp-core/packages/lib-neopt-core-js/dist demo/
 
 serve_demo:

@@ -1,7 +1,8 @@
 <!doctype html>
+
 <head>
-<meta content="text/html;charset=utf-8" http-equiv="Content-Type">
-<meta content="utf-8" http-equiv="encoding">
+    <meta content="text/html;charset=utf-8" http-equiv="Content-Type">
+    <meta content="utf-8" http-equiv="encoding">
 </head>
 <script src="./dist/lib-neopt-core.js"></script>
 <script>
@@ -21,15 +22,15 @@
 
 
 <script>
-    function testConversionToVerification(){
+    function testConversionToVerification() {
         let csbiginteger = Neo3CppLib.csbiginteger;
         console.log(csbiginteger);
         var vx = csbiginteger.csBigInteger("92417421609284060097852441734141491128266387380656748836951019715045385777354", 10)
         var vy = csbiginteger.csBigInteger("81306213973968698003399946097148256829885864908442466985789085263601870844340", 10)
         var ecpoint = {
-            "X" : vx.toHexString(),
-            "Y" : vy.toHexString(),
-            "curve" : "secp256r1"
+            "X": vx.toHexString(),
+            "Y": vy.toHexString(),
+            "curve": "secp256r1"
         };
         var strJson = JSON.stringify(ecpoint);
         console.log(strJson);
@@ -38,25 +39,69 @@
         //var vout = neoptFib.cpp_SmartContract_Contract_CreateSignatureRedeemScript(strJson); //Module.cpp_SmartContract_Contract_CreateSignatureRedeemScript(strJson);
         var vout = Neo3CppLib.Neo3_SmartContract_Contract_CreateSignatureRedeemScript(strJson); //Module.cpp_SmartContract_Contract_CreateSignatureRedeemScript(strJson);
         //var vout = neoptFib.Neo3.Contract_CreateSignatureRedeemScript(strJson);
-        output="out='"+vout+"'";
+        output = "out='" + vout + "'";
         console.log(output);
         return output;
     }
-  </script>
+</script>
 
 <body>
-  <h2>neopt-sdk-js</h2>
+    <h2>neopt-sdk-js</h2>
 
-  <br/>
-  <b>Neo3CppLib:</b><div id="lib_hash">loading...</div>
-  <b>Core Date:</b><div id="lib_date">loading...</div>
-  <br/><br/>
+    <br />
+    <b>Neo3CppLib:</b>
+    <div id="lib_hash">loading...</div>
+    <b>Core Date:</b>
+    <div id="lib_date">loading...</div>
+    <br /><br />
 
-  This is a demo for <a href="https://github.com/neoresearch/neopt-sdk-js">neopt-sdk-js</a>,
-  a JavaScript SDK for Neo3 Blockchain. It is based on C++ projects neopt and neo-cpp-core.
 
-  This is under construction. See console for some messages.
+    This is a demo for <a href="https://github.com/neoresearch/neopt-sdk-js">neopt-sdk-js</a>,
+    a JavaScript SDK for Neo3 Blockchain. It is based on C++ projects neopt and neo-cpp-core.
 
-  Soon this will have interactive boxes for experimenting the SDK online ;)
+    <br /><br />
+
+    <h3>Wallets</h3>
+<!-- 
+    Neo3CppLib.Neo3_Wallets_wHelper_ToScriptHash
+    Neo3CppLib.Neo3_Wallets_wHelper_ToAddress
+    Neo3CppLib.Neo3_SmartContract_scHelper_ToScriptHash
+    Neo3CppLib.Neo3_SmartContract_Contract_CreateSignatureRedeemScript
+-->
+
+    <input type="text" id="whelper_toscripthash" value="NSh6STZ6K4jUVDNZHwYSLc4ViuEm9Q1JtU" />
+    <input type="text" id="whelper_toscripthash_output" readonly></input>
+    <button id="whelper_toscripthash_btn" onclick="test_Neo3_Wallets_wHelper_ToScriptHash()">
+        Neo3_Wallets_wHelper_ToScriptHash
+    </button>
+    <br /><br />
+
+    <input type="text" id="whelper_toaddress" value="0x0eec9e10f6491c39f3e8dbc8af7186282487594a" />
+    <input type="text" id="whelper_toaddress_output" readonly></input>
+    <button id="whelper_toscripthash_btn" onclick="test_Neo3_Wallets_wHelper_ToAddress()">
+        Neo3_Wallets_wHelper_ToAddress
+    </button>
+    <br /><br />
+
+    <h3>SmartContract</h3>
+
+    This is under construction. See console for some messages.
+
+    Soon this will have interactive boxes for experimenting the SDK online ;)
 </body>
+<script>
+    function test_Neo3_Wallets_wHelper_ToScriptHash() {
+        document.getElementById('whelper_toscripthash_output').value =
+            Neo3CppLib.Neo3_Wallets_wHelper_ToScriptHash(
+                document.getElementById('whelper_toscripthash').value
+            );
+    }
+    function test_Neo3_Wallets_wHelper_ToAddress() {
+        document.getElementById('whelper_toaddress_output').value =
+            Neo3CppLib.Neo3_Wallets_wHelper_ToAddress(
+                document.getElementById('whelper_toaddress').value
+            );
+    }
+</script>
+
 </html>
