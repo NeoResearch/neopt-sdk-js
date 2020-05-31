@@ -12,7 +12,8 @@
         function () {
             console.log("INITIALIZED lib-neopt-core!");
             // can use functions now!
-            //console.log(Neo3CppLib.xyz(10));
+            document.getElementById('lib_hash').innerHTML = Neo3CppLib.mymodule['core-hash'];
+            document.getElementById('lib_date').innerHTML = Neo3CppLib.mymodule['core-date'];
         }
     );
 //
@@ -45,6 +46,11 @@
 
 <body>
   <h2>neopt-sdk-js</h2>
+
+  <br/>
+  <b>Neo3CppLib:</b><div id="lib_hash">loading...</div>
+  <b>Core Date:</b><div id="lib_date">loading...</div>
+  <br/><br/>
 
   This is a demo for <a href="https://github.com/neoresearch/neopt-sdk-js">neopt-sdk-js</a>,
   a JavaScript SDK for Neo3 Blockchain. It is based on C++ projects neopt and neo-cpp-core.

@@ -1,7 +1,9 @@
 # neopt-sdk-js
 neopt-sdk in JS
 
-instructions: `make` and `make run` (for very simple testing)
+Instructions: `make cpp_core_deps_js` for build and very simple testing (`Neo3CppLib` will be placed on `demo/dist/` folder)
+
+To view `demo/` on browser: `make serve_demo` (see [localhost:9123](http://localhost:9123)).
 
 It will use `emscripten` (it can be from docker), output will be on `build` folder (a `.js` and `.wasm`).
 
@@ -13,6 +15,8 @@ Under construction.
 
 
 ## Practical Development Workflow
+
+Under construction.
 
 ### Run tests
 `make test` (instead of `npm test`)
