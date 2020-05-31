@@ -55,19 +55,29 @@
 <body>
     <h2>neopt-sdk-js</h2>
 
-    <br />
     <a href="https://github.com/NeoResearch/neo-cpp-core/tree/master/packages/lib-neopt-core-js"
         target="_blank"><b>Neo3CppLib:</b></a>
     <div id="lib_hash">loading...</div>
     <b>Core Date:</b>
     <div id="lib_date">loading...</div>
+
+    <br />
+
+    This is a <a href="https://neoresearch.io/neopt-sdk-js/demo/" target="_blank">demo</a> for <a href="https://github.com/neoresearch/neopt-sdk-js" target="_blank">neopt-sdk-js</a>,
+    a JavaScript SDK for <a href="https://github.com/neo-project/neo" target="_blank">Neo3 Blockchain</a>.
+    <br /> <br />
+    <i>
+        This project is based on C++ projects <a href="https://github.com/neoresearch/neopt" target="_blank">neopt</a>,
+        <a href="https://github.com/neoresearch/csbiginteger-cpp" target="_blank">csbiginteger-cpp</a>,
+        <a href="https://github.com/neoresearch/libcrypton" target="_blank">libcrypton</a> and
+        <a href="https://github.com/neoresearch/neo-cpp-core" target="_blank">neo-cpp-core</a>.
+        <br />
+        It also depends on JS project <a href="https://github.com/neoresearch/csbiginteger-js"
+            target="_blank">csbiginteger-js</a>.
+    </i>
     <br /><br />
 
-
-    This is a demo for <a href="https://github.com/neoresearch/neopt-sdk-js">neopt-sdk-js</a>,
-    a JavaScript SDK for Neo3 Blockchain. It is based on C++ projects neopt and neo-cpp-core.
-
-    <br /><br />
+    <b>Feel free to try interactive boxes below and experiment the SDK online &#128521;</b>
 
     <h3>Wallets</h3>
     <!-- 
@@ -97,14 +107,23 @@
 
     <h3>API Methods</h3>
 
-    <i>Neo3CppLib.(api_method_name)</i><br/>
+    <i>Neo3CppLib.(api_method_name)</i><br />
     <textarea id="all_methods" cols=70 rows=6 readonly></textarea>
 
     <h3>More...</h3>
 
     This is under construction. See console for some messages.
 
-    Soon this will have interactive boxes for experimenting the SDK online ;)
+    <br /><br />
+
+    <i>Special thanks to <a href="https://github.com/emscripten-core/emscripten" target="_blank">Emscripten</a> project,
+        it saves us many hours of coding!</i>
+
+    <br /><br />
+
+    Developed with &hearts; by <a href="https://neoresearch.io" target="_blank">NeoResearch</a> Community (2020).
+
+    <br /> <br />
 </body>
 <script>
     function test_Neo3_Wallets_wHelper_ToScriptHash() {
